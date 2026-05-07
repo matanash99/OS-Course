@@ -1,0 +1,9 @@
+Operating Systems Course 2026
+-----------------------------
+Task 1: Basic I/O (read/write)
+Task 2: Lseek & Reverse
+Task 3: Permissions (chmod)
+
+Counting: 1, 2, 3... Done!
+
+End of file.
