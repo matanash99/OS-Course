@@ -1,0 +1,40 @@
+# בדיקת תקינות בסיסית ופיצול
+alloc_ff 1 100
+alloc_ff 2 200
+alloc_ff 3 50
+print
+
+# יצירת חורים לסירוגין
+free 2
+print
+
+# בדיקת First Fit (ייכנס לחור הראשון שנוצר מ-P2)
+alloc_ff 4 50
+print
+
+# בדיקת Best Fit (נחפש חור קטן יותר בהמשך)
+alloc_bf 5 30
+print
+
+# בדיקת שחרור תהליכים סמוכים ומיזוג (Coalescing)
+# נשחרר את כולם ונוודא שחזרנו לסגמנט אחד של 1024
+free 4
+free 5
+free 3
+free 1
+print
+
+# תרחיש מורכב לפרגמנטציה
+alloc_ff 10 100
+alloc_ff 11 100
+alloc_ff 12 100
+alloc_ff 13 100
+free 10
+free 12
+print
+# כרגע יש חור ב-0 (100) וחור ב-200 (100)
+# בקשה ל-50: FF ייקח את החור הראשון, BF ייקח את הראשון (כי הם שווים)
+alloc_ff 14 50
+print
+
+exit
